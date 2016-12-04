@@ -1,0 +1,32 @@
+- var svgPath = "assets/img/sprite.svg"
+
+mixin svg(svgName, className)
+    svg(class=className)
+        use(xlink:href=svgPath+'#'+svgName)
+
+mixin link(href, name)
+    //- attributes == {class: "btn"}
+    a(class!=attributes.class href=href)= name
+
+mixin socialSvg(items, className, href)
+    ul.social-icons
+        each item in items
+            li(class='social-icons__item')
+                a(class='social-icons__link' href=`${href}`)
+                    +svg(`${items}`,`${className}`)
+
+mixin profile(type)
+    if type === 'main'
+        .profile
+            .profile__userpic
+                img.profile__userpic-image(src='assets/img/content/user-photo.jpg' alt='Yakut Anna')
+            .profile__info
+                h1.profile__name Якут Анна
+                p.profile__description Личный сайт веб-разработчика
+    else if type === 'blog'
+        .profile
+            .profile__userpic
+                img.profile__userpic-image(src='/img/content/user-photo.jpg' alt='Yakut Anna')
+            .profile__info
+                h1.profile__title Блог
+                p.profile__description Статьи, которые я написал

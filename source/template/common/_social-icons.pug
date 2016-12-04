@@ -1,0 +1,22 @@
+-
+    var socialLinks = [
+        {
+            icon: 'vk',
+            class:'svg-vk-dims',
+            href: '#'
+        },{
+            icon: 'github',
+            class:'svg-github-dims',
+            href: '#'
+        },{
+            icon: 'in',
+            class:'svg-in-dims',
+            href: '#'
+        }
+    ]
+
+ul.social-icons
+    each item in socialLinks
+        li(class='social-icons__item')
+            a(class='social-icons__link' href=item.href)
+                +svg(`${item.icon}`,`${item.class}`)

@@ -1,0 +1,29 @@
+-
+  var navItems = [
+    {
+      title: 'Мои работы',
+      href: 'work.html'
+    },{
+      title: 'Блог',
+      href: 'blog.html'
+    },{
+      title: 'Обо мне',
+      href: 'about.html'
+    },{
+      title: 'Авторизация',
+      href: 'login.html'
+    }
+  ]
+
+nav.nav
+  .nav__button
+    a.nav__button-show-menu_size_l(href='#')
+      +svg('hamburger','svg-hamburger-dims')
+  .nav__menu
+    .nav__button
+      a.nav__button-close_size_m(href='#')
+        i.fa.fa-close
+    ul(class='nav__list')
+      each item in navItems
+        li(class='nav__item')
+          a(class='nav__link' href=item.href)= item.title
