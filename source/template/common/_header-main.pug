@@ -1,0 +1,35 @@
+-
+    var socialLinks = [
+        {
+            icon: 'vk',
+            href: '#'
+        },{
+            icon: 'github',
+            href: '#'
+        },{
+            icon: 'linkedin',
+            href: '#'
+        }
+    ]
+
+header.header
+    .header__top-nav
+        .header__top-nav__container
+            +socialSvg([
+                ["vk", "#"],
+                ["github", "#"],
+                ["in", "#"]
+            ])
+            nav.nav
+                a.nav__show-menu.btn-icon_size_l(href='#')
+                    +svg('hamburger')
+                .nav__menu
+                    a.nav__close.btn-icon_size_m(href='#')
+                        i.fa.fa-close
+                    include ../common/_nav
+    .header__title-bg
+        +svg('portfolio_header')
+    .header__profile__container
+        +profile('main')
+    a.header__arrow.btn-icon_size_s(href='#')
+        +svg('arrow_down')

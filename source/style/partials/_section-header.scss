@@ -1,0 +1,30 @@
+.section-header {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  padding: 70px 0;
+  z-index: 10;
+
+  &__title-bg {
+
+    .svg-icon {
+      position: absolute;
+      width: 490px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      fill: #eef4e1;
+      z-index: -1;
+    }
+  }
+
+  &__title-text {
+      position: relative;
+      text-align: center;
+      color: #373e42;
+      font-size: 63px;
+      text-transform: uppercase;
+      font-family: 'Roboto Light';
+  }
+
+}

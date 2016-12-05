@@ -1,0 +1,64 @@
+.header {
+  position: relative;
+  height: 100vh;
+  background: url(../img/water.jpg) no-repeat 0 0 / cover;
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  &__top-nav {
+    width: 100%;
+
+    &__container {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 30px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title-bg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    z-index: 1;
+
+    .svg-icon {
+      width: 100%;
+      fill: #fff;
+      opacity: .12;
+    }
+  }
+
+  &__profile {
+    z-index: 10;
+  }
+
+  &__arrow {
+    position: absolute;
+    left: 50%;
+    bottom: 70px;
+    z-index: 1;
+    transform: translateX(-50%);
+
+    .svg-icon {
+      fill: #fff;
+
+      &:hover {
+        cursor: pointer;
+        fill: #447336;
+      }
+    }
+  }
+
+}

@@ -1,32 +1,82 @@
 - var svgPath = "assets/img/sprite.svg"
 
-mixin svg(svgName, className)
-    svg(class=className)
+mixin svg(svgName)
+    svg(class='svg-'+svgName+'-dims svg-icon')
         use(xlink:href=svgPath+'#'+svgName)
 
-mixin link(href, name)
-    //- attributes == {class: "btn"}
-    a(class!=attributes.class href=href)= name
+mixin link(className, href, name)
+    a(class=className href=href)= name
 
-mixin socialSvg(items, className, href)
+mixin socialSvg(items)
     ul.social-icons
         each item in items
             li(class='social-icons__item')
-                a(class='social-icons__link' href=`${href}`)
-                    +svg(`${items}`,`${className}`)
+                a(class='social-icons__link' href=item[1])
+                    +svg(item[0])
 
 mixin profile(type)
     if type === 'main'
         .profile
             .profile__userpic
-                img.profile__userpic-image(src='assets/img/content/user-photo.jpg' alt='Yakut Anna')
+                img.profile__userpic-image(src='assets/img/user_photo.jpg' alt='Yakut Anna')
             .profile__info
                 h1.profile__name Якут Анна
                 p.profile__description Личный сайт веб-разработчика
     else if type === 'blog'
         .profile
             .profile__userpic
-                img.profile__userpic-image(src='/img/content/user-photo.jpg' alt='Yakut Anna')
+                img.profile__userpic-image(src='/img/user_photo.jpg' alt='Yakut Anna')
             .profile__info
                 h1.profile__title Блог
-                p.profile__description Статьи, которые я написал
+                p.profile__description Статьи, которые я написала
+
+mixin stack(items)
+    ul.stack
+        each item in items
+            li !{item}
+                span.coma ,
+
+mixin button(icon, type, className, text)
+    if icon === 'link'
+        button(class=`${className}`+' btn btn-link' type=type)
+            +svg('link')
+            |#{text}
+    else
+        button(class=`${className}`+' btn' type=type)
+            |#{text}
+
+mixin sectionHeader(type, title)
+    if type === ''
+        h2 !{title}
+        .line
+    else
+        .section-header
+            .section-header__title-bg
+                +svg(`${type}`)
+                h1.section-header__title-text !{title}
+                .line
+
+mixin reviews(data)
+    each item in data
+        .review
+            .review__text !{item.text}
+            .review__person
+                .review__userpic: img.review__userpic-image(src=item.image alt=item.name)
+                .review__info
+                    .review__name !{item.name}
+                    .review__descr !{item.description}
+
+mixin skills(data, progress)
+    ul.skill__item
+        each item in data
+            li.skill__progress(data-name=`${item[0]}` data-percent=`${item[1]}`)
+                svg(width="140" height="140" class="g-circles")
+                    circle(r="57" cx="70" cy="70" stroke="#dfdcd5" fill="none")
+                    circle(r="57" cx="70" cy="70" stroke="#77a266" transform="rotate(-90 70 70)" class="sector")
+
+mixin contact(items)
+    ul.contact__form__items
+        each item in items
+            li(class='contact__form__item')
+                +svg(item[0])
+                span(class='contact__form__item-text') #{item[1]}

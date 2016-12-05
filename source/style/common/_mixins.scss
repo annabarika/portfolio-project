@@ -1,0 +1,44 @@
+@mixin background-opacity($color, $opacity: 0.3) {
+  background: $color; /* The Fallback */
+  background: rgba($color, $opacity);
+}
+
+@mixin font-face($family, $path, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $family;
+    src: url('#{$path}.eot');
+    src: url('#{$path}.eot?#iefix') format('embedded-opentype'), url('#{$path}.woff') format('woff'), url('#{$path}.ttf') format('truetype'), url('#{$path}.svg') format('svg');
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+
+@mixin header-font-style($color, $font-size) {
+  font-family: 'Bernier Regular';
+  font-size: $font-size;
+  color: $color;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: -42px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 5px;
+    z-index: 1;
+    @include background-opacity($color, .2);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: -42px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 5px;
+    z-index: 1;
+    @include background-opacity($color, .2);
+  }
+}

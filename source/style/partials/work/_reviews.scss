@@ -1,0 +1,8 @@
+.reviews {
+  background: url(../img/contact_form_bg.png) no-repeat 0 0 / cover;
+
+  &__items {
+    display: flex;
+    flex-direction: row;
+  }
+}

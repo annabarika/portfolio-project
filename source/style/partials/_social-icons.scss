@@ -1,0 +1,24 @@
+.social-icons {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+
+  &__item {
+    margin-right: 25px;
+  }
+
+  &__link {
+    display: block;
+
+    .svg-icon {
+      fill: #fff;
+
+      &:hover {
+        cursor: pointer;
+        fill: #447336;
+      }
+    }
+  }
+}

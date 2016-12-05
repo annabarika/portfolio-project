@@ -2,8 +2,72 @@ extends ../_template
 
 block variables
   - var title = 'Work'
+  -
+    var reviewsData = [
+      {
+        text: 'Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!',
+        name: 'Ковальчук Дмитрий',
+        description: 'Основатель Loftschool',
+        image: '/assets/img/work/review_dima.png'
+      },
+      {
+        text: 'Этот код выдержет любые испытания. Только пожалуйста, не загружается сайт на слишком старых браузерах!',
+        name: 'Зар Захаров',
+        description: 'Преподаватель',
+        image: '/assets/img/work/review_zar.png'
+      }
+    ]
 
 block header
-  include ../common/_header
+  include ../common/_header-main
 
 block content
+
+  section.slider
+    .slider__top-bg
+      +svg('bg')
+    +sectionHeader('portfolio_header', 'Мои работы')
+
+    .slider__container
+      .slider__info
+        .slider__item-title
+          +sectionHeader('', 'Сайт школы онлайн образования')
+        .slider__description
+          +stack(['HTML', 'CSS', 'JAVASCRIPT'])
+          +button('link', 'button', 'slider__btn', 'Посмотреть сайт')
+
+      .slider__items
+        .slider__item.slider__item-active
+          img.slider__item-image(src='assets/img/work-1.png')
+        .slider__item-group
+          .slider__item
+            .btn-icon_size_m
+              +svg('portf_arrow_down')
+            img.slider__item-image(src='assets/img/work-2.png' alt='Work')
+          .slider__item
+            .btn-icon_size_m
+              +svg('portf_arrow_up')
+            img.slider__item-image(src='assets/img/work-3.png' alt='Work')
+
+  section.reviews
+    +sectionHeader('about_header', 'Что обо мне говорят')
+    .reviews__container
+      .reviews__items
+        +reviews(reviewsData)
+
+    form.reviews__form.form
+      .form__container
+        +sectionHeader('', 'Связаться со мной')
+        input.form__control(type=text placeholder='Имя')
+        input.form__control(type=text placeholder='Email')
+        textarea.form__control(placeholder='Ваше сообщение' rows='5')
+      .form__btn-group
+        +button('', 'submit', 'form__btn', 'Отправить')
+        +button('', 'button', 'form__btn', 'Очистить')
+
+block footer
+  include ../common/_footer
+
+
+
+

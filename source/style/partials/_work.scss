@@ -1,0 +1,38 @@
+.profile {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  &__userpic {
+    width: 140px;
+    height: 140px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-bottom: 30px;
+
+    &-image {
+      display: block;
+      margin: 0 auto;
+      height: 100%;
+    }
+  }
+  
+  &__info {
+    text-align: center;
+  }
+  
+  &__name {
+    font-family: 'Roboto Medium';
+    color: #fff;
+    font-size: 2.186em;
+    margin: 0 0 5px;
+  }
+
+  &__description {
+    font-family: 'Roboto Light';
+    color: #fff;
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+  }
+}

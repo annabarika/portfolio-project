@@ -1,0 +1,23 @@
+extends ../_template
+block variables
+    - var title = 'Welcome'
+
+block content
+    section.welcome
+        .welcome__form.form
+            .form__container
+                +profile('main')
+                +socialSvg([
+                    ["vk", "#"],
+                    ["github", "#"],
+                    ["in", "#"]
+                ])
+            .form__btn-group
+                +link('form__btn', '#', 'Мои работы')
+                +link('form__btn', '#', 'Обо мне')
+                +link('form__btn', '#', 'Блог')
+        .welcome__copyright.copyright
+            ul
+                li &copy; Якут Анна
+                li Создано с любовью в LoftSchool
+                li 2016

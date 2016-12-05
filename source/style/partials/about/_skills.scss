@@ -1,0 +1,28 @@
+.g-circles {
+  fill: none;
+  stroke-width: 20;
+
+  .sector {
+    stroke-dasharray: 0 374;
+    transition: all 1s;
+  }
+
+  &:hover {
+    .sector {
+      stroke-dasharray: 337 374;
+    }
+  }
+
+}
+
+.skill {
+  padding: 10px;
+
+  &__item {
+    list-style: none;
+  }
+
+  &__progress {
+    display: inline-block;
+  }
+}
