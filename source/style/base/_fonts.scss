@@ -1,2 +1,10 @@
-@include font-face('Roboto Medium', '../fonts/roboto/regular/Roboto-Medium')
-@include font-face('Roboto Light', '../fonts/roboto/regular/Roboto-Light')
+@include font-face(Roboto, roboto, roboto-light, 300, normal, sans-serif);
+@include font-face(Roboto, roboto, roboto-regular, 400, normal, sans-serif);
+@include font-face(Roboto, roboto, roboto-medium, 600, normal, sans-serif);
+@include font-face(Roboto, roboto, roboto-bold, 700, normal, sans-serif);
+@include font-face(Roboto, roboto, roboto-light, 300, italic, sans-serif);
+@include font-face(Roboto, roboto, roboto-regular, 400, italic, sans-serif);
+@include font-face(Roboto, roboto, roboto-medium, 600, italic, sans-serif);
+@include font-face(Roboto, roboto, roboto-bold, 700, italic, sans-serif);
+@include font-face(SansusWebissimo, sansus, SansusWebissimo, 400, normal, serif);
+@include font-face(FontAwesome, fontawesome, fontawesome-webfont, 400, normal, '');
