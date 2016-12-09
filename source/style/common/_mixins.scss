@@ -3,42 +3,81 @@
   background: rgba($color, $opacity);
 }
 
-@mixin font-face($family, $path, $weight: normal, $style: normal) {
+@mixin font-face($style-name, $family, $file, $font-weight, $font-style, $category:'') {
+  $filepath: '../font/' + $family + '/' + $file;
   @font-face {
-    font-family: $family;
-    src: url('#{$path}.eot');
-    src: url('#{$path}.eot?#iefix') format('embedded-opentype'), url('#{$path}.woff') format('woff'), url('#{$path}.ttf') format('truetype'), url('#{$path}.svg') format('svg');
-    font-weight: $weight;
-    font-style: $style;
+    font-family: '#{$style-name}';
+    src: url($filepath + '.eot');
+    src: url($filepath + '.eot?#iefix') format('embedded-opentype'), 
+    url($filepath + '.woff') format('woff'), 
+    url($filepath + '.ttf')  format('truetype'), 
+    url($filepath + '.svg') format('svg');
+    font-weight: $font-weight;
+    font-style: $font-style;
+  }
+  @media screen and (-webkit-min-device-pixel-ratio: 0) {
+    @font-face {
+      font-family: '#{$style-name}';
+      src: url('#{$filepath}.svg') format('svg');
+    }
+  }
+  %#{$style-name} {
+    font: {
+      @if $category != '' {
+        family: '#{$style-name}', #{$category};
+      }
+      @else {
+        family: '#{$style-name}';
+        weight: normal;
+      }
+    }
   }
 }
 
 @mixin header-font-style($color, $font-size) {
-  font-family: 'Bernier Regular';
+  font-family: 'SansusWebissimo', serif;
   font-size: $font-size;
   color: $color;
+  font-weight: 400;
+}
 
-  &::before {
-    content: '';
-    position: absolute;
-    left: -42px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 22px;
-    height: 5px;
-    z-index: 1;
-    @include background-opacity($color, .2);
-  }
 
-  &::after {
-    content: '';
-    position: absolute;
-    right: -42px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 22px;
-    height: 5px;
-    z-index: 1;
-    @include background-opacity($color, .2);
-  }
+@mixin Roboto-Light {
+  font-family: 'Roboto', arial, sans-serif;
+  font-weight: 300; font-style: normal;
+}
+
+@mixin Roboto-Light-Italic {
+  font-family: 'Roboto', arial, sans-serif;
+  font-weight: 300; font-style: italic;
+}
+
+@mixin Roboto-Regular {
+  font-family: 'Roboto', arial, sans-serif;
+  font-weight: 400; font-style: normal;
+}
+
+@mixin Roboto-Regular-Italic {
+  font-family: 'Roboto', arial, sans-serif;
+  font-weight: 400; font-style: italic;
+}
+
+@mixin Roboto-Medium {
+  font-family: 'Roboto', arial, sans-serif;
+  font-weight: 600; font-style: normal;
+}
+
+@mixin Roboto-Medium-Italic {
+  font-family: 'Roboto', arial, sans-serif;
+  font-weight: 600; font-style: italic;
+}
+
+@mixin Roboto-Bold {
+  font-family: 'Roboto', arial, sans-serif;
+  font-weight: 700; font-style: normal;
+}
+
+@mixin Roboto-Bold-Italic {
+  font-family: 'Roboto', arial, sans-serif;
+  font-weight: 700; font-style: italic;
 }
