@@ -1,20 +1,31 @@
-* {
+*, *:before, *:after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   outline: none;
 }
 
+html,
+body {
+  height: 100%;
+  font-size: 14px/1.7142857143;
+
+  @include breakpoint($s3) {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
 html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
-  height: 100%;
 }
 
 body {
   @include Roboto-Regular;
-  font-weight: 400;
-  line-height: 1.5;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  color: $c6;
+  background-color: $c3;
 }

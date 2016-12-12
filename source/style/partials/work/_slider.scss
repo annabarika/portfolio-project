@@ -18,6 +18,7 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    min-height: 650px;
   }
 
   &__nav, &__items {
@@ -30,13 +31,6 @@
   }
 
   &__item {
-    display: none;
-    box-shadow: inset 0 0 0 9999px rgba(225,228,215,1);
-
-    &-active {
-      display: block;
-      height: 100%;
-    }
 
     &-image {
       max-width: 100%;
@@ -44,12 +38,14 @@
     }
 
     &-title {
-      color: #566358;
-      padding: 20px 0;
-      width: 315px;
+      width: 80%;
+      margin-right: auto;
+      margin-left: auto;
+      color: $c12;
+      font-weight: 500;
 
       &:after {
-        @include after-line(#566358, 90px);
+        @include after-line($c12, 90px);
         margin-top: 15px;
       }
     }
@@ -95,17 +91,41 @@
   }
 
   &__info {
-    flex: 0 0 100%;
-    order: -1;
-    align-items: center;
     text-align: center;
-    background: #ebefe2;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center
+    background-color: $c1;
+    justify-content: center;
+    align-items: center;
+    order: 1;
+    flex: 1 0 auto;
+    @include breakpoint($s2) {
+      width: 50%;
+      flex: 0 0 100%;
+      order: 0;
+    }
   }
+  &__about-wrapper {
+    padding: 31px 0;
+  }
+  &__about-name {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  &__about-description {
+    display: block;
+    margin-bottom: 17px;
+    text-align: center;
+    color: $c12;
+    font-weight: 500;
+  }
+  &__info-btn {
+    position: relative;
+    display: inline-block;
 
+  }
+  &__about-button-icon {
+
+  }
   &__description {
 
   }

@@ -1,0 +1,27 @@
+.slider__container
+    .slider__info
+        .slider__item-title
+            +sectionHeader('', 'Сайт школы онлайн образования')
+
+        .slider__description
+            +stack(['HTML', 'CSS', 'JAVASCRIPT'])
+            +button('link', '#', 'slider__info-btn', 'Посмотреть сайт')
+
+    .slider__main
+        .slider__main-image.slider__item-active
+            img.slider__item-image(src='assets/img/work-1.png' alt='Work')
+
+    .slider__controls
+        .slider__control.slider__control_prev
+            .slider__control-wrapper
+                .slider__control-preview.slider__control-preview_next
+                .slider__control-preview.slider__control-preview_current
+            .slider__control_arrow.btn-icon_size_m
+                 +svg('portf_arrow_down')
+
+        .slider__control.slider__control_next
+            .slider__control-wrapper
+                .slider__control-preview.slider__control-preview_next
+                .slider__control-preview.slider__control-preview_current
+            .slider__control_arrow.btn-icon_size_m
+                +svg('portf_arrow_up')

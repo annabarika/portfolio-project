@@ -37,22 +37,26 @@ mixin stack(items)
                 span.coma ,
 
 mixin button(icon, type, className, text)
-    if icon === 'link'
+    if icon === 'link' && type === 'button'
         button(class=`${className}`+' btn btn-link' type=type)
             +svg('link')
             |#{text}
-    else
+    else if icon === 'link' && type !== 'button'
+        a(class=`${className}`+' btn btn-link' href=type)
+            +svg('link')
+            | #{text}
+    else if icon === ''
         button(class=`${className}`+' btn' type=type)
             |#{text}
 
 mixin sectionHeader(type, title)
     if type === ''
-        h2 !{title}
+        h2.title-text !{title}
     else
         .section-header
             .section-header__title-bg
                 +svg(`${type}`)
-                h1.section-header__title-text !{title}
+                h1.section-header__title-text.title-text !{title}
 
 mixin reviews(data)
     each item in data

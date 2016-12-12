@@ -90,3 +90,22 @@
   display: block;
   margin: 0 auto;
 }
+
+@mixin clearfix {
+  &:after {
+    display: table;
+    clear: both;
+    content: '';
+  }
+}
+
+%clearfix {
+  &:after {
+    display: table;
+    clear: both;
+    content: '';
+  }
+}
+
+// Breakpoints Sass
+@import '../../../node_modules/breakpoint-sass/stylesheets/breakpoint';

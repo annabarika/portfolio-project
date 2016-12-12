@@ -1,8 +1,27 @@
 .reviews {
-  background: url(../img/contact_form_bg.png) no-repeat 0 0 / cover;
-
-  &__items {
+  &__list {
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
+    justify-content: center;
+    @include breakpoint($s2) {
+    }
+  }
+  &__item {
+    margin-bottom: 31px;
+    flex: 0 0 100%;
+    @include breakpoint($s2) {
+      margin-right: 7px;
+      flex-basis: 366px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    @include breakpoint($s3) {
+      margin-right: 2px;
+      flex-basis: 399px;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 }
