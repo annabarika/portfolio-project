@@ -1,0 +1,15 @@
+.stack {
+  color: #4e8839;
+  text-transform: uppercase;
+  list-style: none;
+
+  &__item {
+    display: inline-block;
+
+    &:last-child {
+      .coma {
+        display: none;
+      }
+    }
+  }
+}

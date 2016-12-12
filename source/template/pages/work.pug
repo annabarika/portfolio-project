@@ -26,28 +26,31 @@ block content
   section.slider
     .slider__top-bg
       +svg('bg')
-    +sectionHeader('portfolio_header', 'Мои работы')
+    +sectionHeader('works_header', 'Мои работы')
 
     .slider__container
+      .slider__items
+        .slider__item.slider__item-active
+          img.slider__item-image(src='assets/img/work-1.png' alt='Work')
+
       .slider__info
         .slider__item-title
           +sectionHeader('', 'Сайт школы онлайн образования')
+
         .slider__description
           +stack(['HTML', 'CSS', 'JAVASCRIPT'])
           +button('link', 'button', 'slider__btn', 'Посмотреть сайт')
 
-      .slider__items
-        .slider__item.slider__item-active
-          img.slider__item-image(src='assets/img/work-1.png' alt='Work')
-        .slider__item-group
-          .slider__item
-            .btn-icon_size_m
-              +svg('portf_arrow_down')
-            img.slider__item-image(src='assets/img/work-2.png' alt='Work')
-          .slider__item
-            .btn-icon_size_m
-              +svg('portf_arrow_up')
-            img.slider__item-image(src='assets/img/work-3.png' alt='Work')
+      .slider__nav
+        .slider__nav-prev
+          a.slider__nav-arrow.btn-icon_size_m
+            +svg('portf_arrow_down')
+          img.slider__item-image(src='assets/img/work-2.png' alt='Work')
+
+        .slider__nav-next
+          a.slider__nav-arrow.btn-icon_size_m
+            +svg('portf_arrow_up')
+          img.slider__item-image(src='assets/img/work-3.png' alt='Work')
 
   section.reviews
     +sectionHeader('about_header', 'Что обо мне говорят')

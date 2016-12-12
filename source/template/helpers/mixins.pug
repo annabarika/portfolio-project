@@ -33,7 +33,7 @@ mixin profile(type)
 mixin stack(items)
     ul.stack
         each item in items
-            li !{item}
+            li.stack__item !{item}
                 span.coma ,
 
 mixin button(icon, type, className, text)
@@ -48,13 +48,11 @@ mixin button(icon, type, className, text)
 mixin sectionHeader(type, title)
     if type === ''
         h2 !{title}
-        .line
     else
         .section-header
             .section-header__title-bg
                 +svg(`${type}`)
                 h1.section-header__title-text !{title}
-                .line
 
 mixin reviews(data)
     each item in data

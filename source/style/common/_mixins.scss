@@ -81,3 +81,12 @@
   font-family: 'Roboto', arial, sans-serif;
   font-weight: 700; font-style: italic;
 }
+
+@mixin after-line($color, $width) {
+  content: '';
+  width: $width;
+  height: 2px;
+  background: $color;
+  display: block;
+  margin: 0 auto;
+}
