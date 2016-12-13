@@ -13,19 +13,19 @@
       left: 50%;
       transform: translate(-50%, -50%);
       top: 45%;
-      fill: #eef4e1;
+      fill: $c20;
       z-index: -1;
     }
   }
 
   &__title-text {
-    @include header-font-style(#373e42, 63px);
+    @include header-font-style($c4, 60px);
     position: relative;
     text-align: center;
     text-transform: uppercase;
 
     &:after {
-      @include after-line(#373e42, 90px);
+      @include after-line($c4, 90px);
     }
   }
 

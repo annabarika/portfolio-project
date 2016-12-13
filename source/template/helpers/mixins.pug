@@ -60,7 +60,7 @@ mixin sectionHeader(type, title)
 
 mixin reviews(data)
     each item in data
-        .review
+        .review__item
             .review__text !{item.text}
             .review__person
                 .review__userpic: img.review__userpic-image(src=item.image alt=item.name)

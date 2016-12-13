@@ -29,3 +29,10 @@ body {
   color: $c6;
   background-color: $c3;
 }
+
+.wrapper {
+  display: flex;
+  flex: 1 0 auto;
+  flex-flow: column wrap;
+  position: relative;
+}

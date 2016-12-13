@@ -18,35 +18,37 @@ block variables
       }
     ]
 
-block header
-  include ../common/_header-main
+block main
+  main.wrapper
 
-block content
+    block header
+      include ../common/_header-main
 
-  section.slider
-    .slider__top-bg
-      +svg('bg')
-    +sectionHeader('works_header', 'Мои работы')
-    include work/_slider
+    block content
+      section.slider
+        .slider__top-bg
+          +svg('bg')
+        +sectionHeader('works_header', 'Мои работы')
+        include work/_slider
 
-  section.reviews
-    +sectionHeader('about_header', 'Что обо мне говорят')
-    .reviews__container
-      .reviews__items
-        +reviews(reviewsData)
+      section.review
+        +sectionHeader('about_header', 'Что обо мне говорят')
+        .review__container
+          .review__items
+            +reviews(reviewsData)
 
-    form.reviews__form.form
-      .form__container
-        +sectionHeader('', 'Связаться со мной')
-        input.form__control(type=text placeholder='Имя')
-        input.form__control(type=text placeholder='Email')
-        textarea.form__control(placeholder='Ваше сообщение' rows='5')
-      .form__btn-group
-        +button('', 'submit', 'form__btn', 'Отправить')
-        +button('', 'button', 'form__btn', 'Очистить')
+        form.review__form.form
+          .form__container
+            +sectionHeader('', 'Связаться со мной')
+            input.form__control(type=text placeholder='Имя')
+            input.form__control(type=text placeholder='Email')
+            textarea.form__control(placeholder='Ваше сообщение' rows='5')
+          .form__btn-group
+            +button('', 'submit', 'form__btn', 'Отправить')
+            +button('', 'button', 'form__btn', 'Очистить')
 
-block footer
-  include ../common/_footer
+    block footer
+      include ../common/_footer
 
 
 
