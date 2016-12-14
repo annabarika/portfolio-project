@@ -1,8 +1,12 @@
 - var svgPath = "assets/img/sprite.svg"
 
-mixin svg(svgName)
-    svg(class='svg-'+svgName+'-dims svg-icon')
-        use(xlink:href=svgPath+'#'+svgName)
+mixin svg(svgName, className)
+    if className
+        svg(class='svg-'+svgName+'-dims svg-icon' + ' ' + className)
+            use(xlink:href=svgPath+'#'+svgName)
+    else
+        svg(class='svg-' + svgName + '-dims svg-icon')
+            use(xlink:href=svgPath + '#' + svgName)
 
 mixin link(className, href, name)
     a(class=className href=href)= name
@@ -49,24 +53,25 @@ mixin button(icon, type, className, text)
         button(class=`${className}`+' btn' type=type)
             |#{text}
 
-mixin sectionHeader(type, title)
+mixin sectionHeader(type, title, classNameHeader, classNameSvg)
     if type === ''
-        h2.title-text !{title}
+        .section-header
+            h2(class='title-text title-text_b section-header__'+`${classNameHeader}`) !{title}
     else
         .section-header
-            .section-header__title-bg
-                +svg(`${type}`)
-                h1.section-header__title-text.title-text !{title}
+            +svg(`${type}`, 'section-header__bg section-header__bg_' +`${classNameSvg}`)
+            h1(class='title-text title-text_a section-header__'+`${classNameHeader}`) !{title}
 
 mixin reviews(data)
     each item in data
         .review__item
             .review__text !{item.text}
+                +svg('quote', 'review__text-icon')
             .review__person
                 .review__userpic: img.review__userpic-image(src=item.image alt=item.name)
                 .review__info
                     .review__name !{item.name}
-                    .review__descr !{item.description}
+                    .review__description !{item.description}
 
 mixin skills(data, progress)
     ul.skill__item

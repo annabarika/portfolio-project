@@ -1,7 +1,6 @@
 .slider__container
     .slider__info
-        .slider__item-title
-            +sectionHeader('', 'Сайт школы онлайн образования')
+        +sectionHeader('', 'Сайт школы онлайн образования', 'slider')
 
         .slider__description
             +stack(['HTML', 'CSS', 'JAVASCRIPT'])
@@ -16,12 +15,10 @@
             .slider__control-wrapper
                 .slider__control-preview.slider__control-preview_next
                 .slider__control-preview.slider__control-preview_current
-            .slider__control_arrow.btn-icon_size_m
-                 +svg('portf_arrow_down')
+            +svg('portf_arrow_down', 'slider__control-arrow slider__control-arrow_down')
 
         .slider__control.slider__control_next
             .slider__control-wrapper
                 .slider__control-preview.slider__control-preview_next
                 .slider__control-preview.slider__control-preview_current
-            .slider__control_arrow.btn-icon_size_m
-                +svg('portf_arrow_up')
+            +svg('portf_arrow_up', 'slider__control-arrow slider__control-arrow_up')

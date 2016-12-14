@@ -26,7 +26,7 @@
       min-height: 147px;
     }
 
-    &_1 {
+    &_a {
       @include breakpoint($s2) {
         padding: 25px 24px;
         flex: 1 0 50%;
@@ -36,7 +36,7 @@
         flex: 1 0 30%;
       }
     }
-    &_2 {
+    &_b {
       padding: 15px 15px 20px;
 
       @include breakpoint($s2) {
@@ -50,7 +50,7 @@
         flex: 1 0 30%;
       }
     }
-    &_3 {
+    &_c {
       flex: 1 1 100%;
       @include breakpoint($s2) {
         padding: 23px 24px;
@@ -118,7 +118,7 @@
     margin: 0;
     padding: 6px 0 12px;
     text-align: center;
-    color: #fff;
+    color: $c0;
     background-color: rgba($c7, .85);
     font-weight: 300;
     flex-basis: 100%;

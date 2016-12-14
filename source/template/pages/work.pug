@@ -26,26 +26,28 @@ block main
 
     block content
       section.slider
-        .slider__top-bg
-          +svg('bg')
-        +sectionHeader('works_header', 'Мои работы')
+        +svg('bg', 'slider__top-bg')
+        +sectionHeader('works_header', 'Мои работы', 'works', 'works-header')
         include work/_slider
 
       section.review
-        +sectionHeader('about_header', 'Что обо мне говорят')
+        +sectionHeader('about_header', 'Что обо мне говорят', 'review', 'about-header')
         .review__container
           .review__items
             +reviews(reviewsData)
 
-        form.review__form.form
-          .form__container
-            +sectionHeader('', 'Связаться со мной')
-            input.form__control(type=text placeholder='Имя')
-            input.form__control(type=text placeholder='Email')
-            textarea.form__control(placeholder='Ваше сообщение' rows='5')
-          .form__btn-group
-            +button('', 'submit', 'form__btn', 'Отправить')
-            +button('', 'button', 'form__btn', 'Очистить')
+        .review__feedback.feedback
+          form.feedback__form.form
+            .form__container
+              +sectionHeader('', 'Связаться со мной', 'feedback')
+              input.form__control.form__control_input(type=text placeholder='Имя')
+              input.form__control.form__control_input(type=text placeholder='Email')
+              textarea.form__control.form__control_textarea(placeholder='Ваше сообщение' rows='5')
+            .form__btn-group
+              +button('', 'submit', 'form__btn form__btn_submit', 'Отправить')
+              +button('', 'button', 'form__btn form__btn_reset', 'Очистить')
+
+        +svg('arrow_down', 'review__arrow')
 
     block footer
       include ../common/_footer

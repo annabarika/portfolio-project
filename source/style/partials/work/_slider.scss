@@ -1,16 +1,12 @@
 .slider {
   position: relative;
-  background: #f8f9f5;
+  background: $c16;
 
   &__top-bg {
     position: absolute;
     top: -175px;
     width: 100%;
-
-    .svg-icon {
-      width: 100%;
-      fill: #f8f9f5;
-    }
+    fill: $c16;
   }
 
   &__container {
@@ -21,49 +17,74 @@
     min-height: 650px;
   }
 
-  &__nav, &__items {
+  &__main {
+    position: relative;
+    display: flex;
+    min-height: 200px;
+    background-color: $c17;
     flex: 1 0 auto;
-    width: 50%;
-  }
-
-  &__items {
-    height: calc(100% - 200px);
+    order: 0;
+    justify-content: center;
+    align-items: center;
+    @include breakpoint($s2) {
+      width: 50%;
+      padding: 0;
+      flex: 0 0 70%;
+      order: 1;
+    }
   }
 
   &__item {
-
     &-image {
       max-width: 100%;
       max-height: 100%;
     }
+  }
 
-    &-title {
-      width: 80%;
-      margin-right: auto;
-      margin-left: auto;
-      color: $c12;
-      font-weight: 500;
+  &__main-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 50% 50% no-repeat;
+    background-size: 60% auto;
 
-      &:after {
-        @include after-line($c12, 90px);
-        margin-top: 15px;
-      }
+    @include breakpoint((min-width: 540px)) {
+      background-size: 50% auto;
+    }
+    @include breakpoint((min-height 850px)) {
+      background-size: 78% auto;
     }
   }
 
-  &__nav {
-    height: 200px;
+  &__controls {
     display: flex;
+    min-height: 100px;
+    background-color: #e3ded0;
+    flex: 1 0 auto;
+    order: 2;
+    @include breakpoint($s2) {
+      width: 50%;
+      flex: 0 0 30%;
+      order: 1;
+    }
+  }
 
-    &-prev {
+  &__control {
+    position: relative;
+    z-index: 1;
+    flex: 1 0 50%;
+
+    &_prev {
       box-shadow: inset 0 0 0 9999px rgba(186,191,182,0.6);
     }
 
-    &-next {
+    &_next {
       box-shadow: inset 0 0 0 9999px rgba(166,170,162,0.6);
     }
 
-    &-prev, &-next {
+    &_prev, &_next {
       width: 50%;
       position: relative;
       background-color: #e1e4d7;
@@ -75,26 +96,76 @@
       &:hover {
         cursor: pointer;
         box-shadow: inset 0 0 0 9999px rgba(161,166,157,0.9);
+        .slider__control-arrow_down {
+          transform: translateY(15px);
+        }
+        .slider__control-arrow_up {
+          transform: translateY(-15px);
+        }
       }
 
-      .svg-icon {
-        fill: #fff;
+      &:active {
+        .slider__control-arrow_down {
+          transition-duration: .15s;
+          transform: translateY(20px);
+        }
+        .slider__control-arrow_up {
+          transition-duration: .15s;
+          transform: translateY(-20px);
+        }
       }
+    }
+
+    &-arrow {
+      position: absolute;
+      z-index: 11;
+      top: 50%;
+      left: 50%;
+      width: 43px;
+      height: 27px;
+      margin-top: -(27px / 2);
+      margin-left: (-43px / 2);
+      transition: all .35s;
+      filter: drop-shadow(1px 1.7px 2px rgba(0, 0, 0, 0.16));
+      fill: $c0;
     }
   }
 
-  &__nav-arrow {
+  &__control-wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+  }
+  &__control-preview {
     position: absolute;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    top: 50%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    &_current,
+    &_next {
+      background: 50% 50% no-repeat;
+      background-size: 60% auto;
+
+      @include breakpoint((min-height 850px)) {
+        background-size: 75% auto;
+      }
+    }
+    &_current {
+    }
+    &_next {
+      top: -100%;
+    }
   }
 
   &__info {
     text-align: center;
     background-color: $c1;
+    flex-direction: column;
+    display: flex;
     justify-content: center;
-    align-items: center;
+    align-content: center;
     order: 1;
     flex: 1 0 auto;
     @include breakpoint($s2) {
@@ -123,10 +194,5 @@
     display: inline-block;
 
   }
-  &__about-button-icon {
 
-  }
-  &__description {
-
-  }
 }
