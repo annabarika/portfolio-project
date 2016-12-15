@@ -69,6 +69,18 @@
       display: none;
     }
   }
+
+  &_works {
+    margin-bottom: 17px;
+
+    @include breakpoint($s2) {
+      margin-bottom: 27px;
+    }
+    @include breakpoint($s3) {
+      margin-bottom: 35px;
+    }
+  }
+
   &_address {
     @include breakpoint($s2) {
       margin-bottom: 31px;

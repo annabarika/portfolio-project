@@ -55,12 +55,12 @@ mixin button(icon, type, className, text)
 
 mixin sectionHeader(type, title, classNameHeader, classNameSvg)
     if type === ''
-        .section-header
-            h2(class='title-text title-text_b section-header__'+`${classNameHeader}`) !{title}
+        div(class='section-header section-header_'+`${classNameHeader}`)
+            h2(class='title-text title-text_b title-text_'+`${classNameHeader}`) !{title}
     else
-        .section-header
+        div(class='section-header section-header_'+`${classNameHeader}`)
             +svg(`${type}`, 'section-header__bg section-header__bg_' +`${classNameSvg}`)
-            h1(class='title-text title-text_a section-header__'+`${classNameHeader}`) !{title}
+            h1(class='title-text title-text_a title-text_'+`${classNameHeader}`) !{title}
 
 mixin reviews(data)
     each item in data
