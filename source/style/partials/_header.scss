@@ -10,21 +10,12 @@
 
   &__top-nav {
     width: 100%;
+    padding: 28px;
 
-    &__container {
+    &_container {
       display: flex;
       justify-content: space-between;
     }
-  }
-
-  &__top {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: 30px 30px 0;
-    display: flex;
-    justify-content: space-between;
   }
 
   &__title-bg {
@@ -47,19 +38,29 @@
 
   &__arrow {
     position: absolute;
-    left: 50%;
-    bottom: 70px;
-    z-index: 1;
-    transform: translateX(-50%);
+    text-align: center;
+    width: 100%;
+    bottom: 50px;
+    z-index: 10;
 
-    .svg-icon {
-      fill: #fff;
-
-      &:hover {
+    @include breakpoint($s2) {
+      bottom: 48px;
+    }
+    @include breakpoint($s3) {
+      bottom: 70px;
+    }
+    &:hover {
+      opacity: 1;
+      .header__arrow_down {
+        transform: translateY(5px);
         cursor: pointer;
+        opacity: 1;
         fill: #447336;
       }
     }
-  }
 
+    &_down {
+      fill: #fff;
+    }
+  }
 }

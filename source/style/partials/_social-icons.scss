@@ -11,14 +11,28 @@
 
   &__link {
     display: block;
+  }
 
-    .svg-icon {
-      fill: #fff;
+  &_header {
+    fill: $c0;
+    width: 22px;
+    height: 18px;
 
-      &:hover {
-        cursor: pointer;
-        fill: #447336;
-      }
+    @include breakpoint($s2) {
+      width: 26px;
+      height: 22px;
+    }
+
+    &:hover {
+      cursor: pointer;
+      fill: #447336;
+    }
+  }
+
+  &_footer {
+    @extend .social-icons_header;
+    @include breakpoint($s2) {
+      opacity: .7;
     }
   }
 }

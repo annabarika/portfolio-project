@@ -90,6 +90,7 @@
       bottom: 0;
     }
   }
+
   &__text {
     margin: 0;
     text-align: center;
@@ -99,21 +100,23 @@
       text-align: left;
     }
   }
-  .nav {
+
+  &__nav {
     margin-bottom: 12px;
-
-    &__list {
-      list-style: none;
-    }
-
-    &__item {
-      display: inline-block;
-    }
 
     @include breakpoint($s2) {
       margin-bottom: 20px;
     }
   }
+
+  &__social-icons {
+    justify-content: center;
+
+    @include breakpoint($s2) {
+      justify-content: flex-start;
+    }
+  }
+
   &__copyright {
     margin: 0;
     padding: 6px 0 12px;

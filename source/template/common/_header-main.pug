@@ -14,22 +14,23 @@
 
 header.header
     .header__top-nav
-        .header__top-nav__container
-            +socialSvg([
-                ["vk", "#"],
-                ["github", "#"],
-                ["in", "#"]
-            ])
-            nav.nav
+        .header__top-nav_container
+            ul.header__social-icons.social-icons
+                +socialSvg([
+                    ["vk", "#", 'header'],
+                    ["github", "#", 'header'],
+                    ["in", "#", 'header']
+                ])
+            nav.header__nav.nav
                 a.nav__show-menu.btn-icon_size_l(href='#')
-                    +svg('hamburger')
+                    +svg('hamburger','nav__show-menu_icon')
                 .nav__menu
                     a.nav__close.btn-icon_size_m(href='#')
                         i.fa.fa-close
-                    include ../common/_nav
+                    include _nav
     .header__title-bg
         +svg('portfolio_header')
-    .header__profile__container
+    .header__profile
         +profile('main')
     a.header__arrow.btn-icon_size_s(href='#')
-        +svg('arrow_down')
+        +svg('arrow_down', 'header__arrow_down')

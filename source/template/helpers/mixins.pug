@@ -12,11 +12,10 @@ mixin link(className, href, name)
     a(class=className href=href)= name
 
 mixin socialSvg(items)
-    ul.social-icons
-        each item in items
-            li(class='social-icons__item')
-                a(class='social-icons__link' href=item[1])
-                    +svg(item[0])
+    each item in items
+        li(class='social-icons__item')
+            a(class='social-icons__link' href=item[1])
+                +svg(item[0], 'social-icons_' + item[2])
 
 mixin profile(type)
     if type === 'main'
