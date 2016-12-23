@@ -54,8 +54,14 @@
     @include breakpoint($s3) {
       bottom: 70px;
     }
+
+    &_down {
+      transition: all .25s;
+    }
+
     &:hover {
       opacity: 1;
+
       .header__arrow_down {
         transform: translateY(5px);
         cursor: pointer;

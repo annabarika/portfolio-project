@@ -47,7 +47,8 @@ block main
               +button('', 'submit', 'form__btn form__btn_submit', 'Отправить')
               +button('', 'button', 'form__btn form__btn_reset', 'Очистить')
 
-        +svg('arrow_down', 'review__arrow')
+        a(class='review__arrow-link' href='#')
+          +svg('arrow_down', 'review__arrow')
 
     block footer
       include ../common/_footer

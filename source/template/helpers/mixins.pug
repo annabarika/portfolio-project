@@ -64,11 +64,11 @@ mixin sectionHeader(type, title, classNameHeader, classNameSvg)
 mixin reviews(data)
     each item in data
         .review__item
+            .review__person
+                .review__userpic: img.review__userpic_image(src=item.image alt=item.name)
             .review__text !{item.text}
                 +svg('quote', 'review__text-icon')
-            .review__person
-                .review__userpic: img.review__userpic-image(src=item.image alt=item.name)
-                .review__info
+            .review__info
                     .review__name !{item.name}
                     .review__description !{item.description}
 

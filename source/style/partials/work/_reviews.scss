@@ -1,7 +1,7 @@
 .review {
   background: url(../img/contact_form_bg.png) no-repeat 0 0 / cover;
   background-position: center;
-  padding-bottom: 350px;
+  padding-bottom: 390px;
 
   @include breakpoint($s2) {
     padding-bottom: 300px;
@@ -15,14 +15,15 @@
     padding-bottom: 190px;
   }
 
+  &__container {
+    padding: 0 15px;
+  }
+
   &__items {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-
-    @include breakpoint($s2) {
-      margin-bottom: 20px;
-    }
+    margin-bottom: 20px;
   }
 
   &__item {
@@ -51,10 +52,20 @@
   &__userpic {
     display: block;
     overflow: hidden;
-    width: 80px;
-    height: 80px;
+    width: 55px;
+    height: 55px;
     margin: 0 auto 18px;
     border-radius: 50%;
+
+    @include breakpoint($s3) {
+      width: 80px;
+      height: 80px;
+    }
+
+    &_image {
+      width: 100%;
+      height: auto;
+    }
   }
 
   &__text {
@@ -90,6 +101,25 @@
       padding: 0 5px;
       position: relative;
     }
+  }
 
+  &__arrow-link {
+    display: block;
+    width: 26px;
+    height: 16px;
+    margin: 0 auto 40px;
+    transition: all .25s;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+
+  &__arrow {
+    display: block;
+    width: 26px;
+    height: 16px;
+    transform: rotate(180deg);
+    fill: $c0;
   }
 }

@@ -2,61 +2,66 @@ extends ../_template
 block variables
     - var title = 'About'
 
-block header
-    include ../common/_header-main
+block main
+    main.wrapper
 
-block content
+        block header
+            include ../common/_header-main
 
-    section.about
-        .about__container
-            .about__info
-                +sectionHeader('about_header', 'Обо мне')
-                .about__description
-                    .about__userpic
-                    img.about__userpic-image(src='assets/img/user_photo.jpg' alt='Anna Yakut')
-                    .about__item-title
-                        +sectionHeader('', 'Кто я')
-                    .about__description-text
-                        p Я веб разработчик из Харькова. Мне 29 лет.  Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-                        p Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+        block content
 
-            .about__benefit
-                .about__benefit-title
-                    +sectionHeader('', 'Кто я')
-                .about__benefit-text
-                    p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
-                .skill
-                    h3 Frontend
-                    +skills([
-                        ['HTML5', '374'],
-                        ['CSS3', '374'],
-                        ['JavaScript & jQuery', '374']
+            section.about
+                .about__container
+                    .about__info
+                        .about__wrapper_info
+                            +sectionHeader('about_header', 'Обо мне', 'about', 'about-header')
+                            .about__description
+                                .about__userpic
+                                img.about__userpic-image(src='assets/img/user_photo.jpg' alt='Anna Yakut')
+                                .about__item-title
+                                    +sectionHeader('', 'Кто я')
+                                .about__description-text
+                                    p Я веб разработчик из Харькова. Мне 29 лет.  Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                                    p Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+
+                    .about__benefit
+                        .about__wrapper_benefit
+                            .about__benefit-title
+                                +sectionHeader('', 'Кто я')
+                            .about__benefit-text
+                                p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+                            .skill
+                                h3 Frontend
+                                +skills([
+                                    ['HTML5', '374'],
+                                    ['CSS3', '374'],
+                                    ['JavaScript & jQuery', '374']
+                                ])
+
+                                h3 Backend
+                                +skills([
+                                    ['PHP', '374'],
+                                    ['mySQL', '374'],
+                                    ['Node.js & npm', '374'],
+                                    ['Mongo.db', '374']
+                                ])
+
+                                h3 WorkFlow
+                                +skills([
+                                    ['Git', '374'],
+                                    ['Gulp', '374'],
+                                    ['Bower', '374']
+                                ])
+
+            section.contact
+                .contact__form
+                    +sectionHeader('', 'Контакты')
+                    +contact([
+                        ['skype', 'annabarika'],
+                        ['envelope2', 'annabarika@gmail.com'],
+                        ['phone', '+30501349470'],
+                        ['map_marker', 'Ukraine, Kharkov']
                     ])
 
-                    h3 Backend
-                    +skills([
-                        ['PHP', '374'],
-                        ['mySQL', '374'],
-                        ['Node.js & npm', '374'],
-                        ['Mongo.db', '374']
-                    ])
-
-                    h3 WorkFlow
-                    +skills([
-                        ['Git', '374'],
-                        ['Gulp', '374'],
-                        ['Bower', '374']
-                    ])
-
-    section.contact
-        .contact__form
-            +sectionHeader('', 'Контакты')
-            +contact([
-                ['skype', 'annabarika'],
-                ['envelope2', 'annabarika@gmail.com'],
-                ['phone', '+30501349470'],
-                ['map_marker', 'Ukraine, Kharkov']
-            ])
-
-block footer
-    include ../common/_footer
+        block footer
+            include ../common/_footer
