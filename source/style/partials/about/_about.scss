@@ -36,7 +36,6 @@
         float: right;
         max-width: 445px;
         margin-right: 75px;
-        display: flex;
       }
       @include breakpoint($s4) {
         margin-right: 20px;
