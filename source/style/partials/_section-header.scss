@@ -50,6 +50,12 @@
     @include breakpoint($s3) {
       padding-top: 60px;
     }
+
+    @include breakpoint($s4) {
+      position: absolute;
+      left: -383px;
+      width: 350px;
+    }
   }
 
   &__arrow-link {

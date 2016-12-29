@@ -3,16 +3,9 @@
   stroke-width: 20;
 
   .sector {
-    stroke-dasharray: 0 374;
+    stroke-dasharray: 304 374;
     transition: all 1s;
   }
-
-  &:hover {
-    .sector {
-      stroke-dasharray: 337 374;
-    }
-  }
-
 }
 
 .skill {

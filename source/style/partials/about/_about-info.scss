@@ -1,12 +1,10 @@
-.about__info {
-  position: relative;
-  &__header {
-    @include breakpoint($s4) {
-      position: absolute;
-      left: -383px;
-      width: 350px;
+.about {
+  &__wrapper {
+    &_info {
+      position: relative;
     }
   }
+
   &__img-wrapper {
     display: block;
     width: 100%;
@@ -30,9 +28,7 @@
     width: 100%;
     height: auto;
   }
-  &__title {
 
-  }
   &__text {
     p {
       margin: 0 0 10px;
